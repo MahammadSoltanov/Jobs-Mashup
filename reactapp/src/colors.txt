@@ -1,0 +1,4 @@
+#F1EFEF - white
+#CCC8AA - light green
+#7D7C7C - light gray
+#191717 - black

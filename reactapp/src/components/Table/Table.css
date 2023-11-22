@@ -1,0 +1,23 @@
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.cell {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+}

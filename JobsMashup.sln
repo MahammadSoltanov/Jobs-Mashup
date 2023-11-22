@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp", "reactapp\reactapp.esproj", "{B87104C5-4842-4711-92DB-D36664212694}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csproj", "{44425DC8-FFAB-425F-B520-5AE7C26E4770}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{FA56CE63-D2BF-417E-937F-C21FDE23A0BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{CDE2F637-B487-4FFD-BCE6-DF61AD9B8DB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B20541FB-13EF-4B8C-B3D4-E8C0CF3AC1F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34755F32-0618-442C-8927-E46A9751237E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87104C5-4842-4711-92DB-D36664212694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87104C5-4842-4711-92DB-D36664212694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87104C5-4842-4711-92DB-D36664212694}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B87104C5-4842-4711-92DB-D36664212694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87104C5-4842-4711-92DB-D36664212694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B87104C5-4842-4711-92DB-D36664212694}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{44425DC8-FFAB-425F-B520-5AE7C26E4770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44425DC8-FFAB-425F-B520-5AE7C26E4770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44425DC8-FFAB-425F-B520-5AE7C26E4770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44425DC8-FFAB-425F-B520-5AE7C26E4770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA56CE63-D2BF-417E-937F-C21FDE23A0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA56CE63-D2BF-417E-937F-C21FDE23A0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA56CE63-D2BF-417E-937F-C21FDE23A0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA56CE63-D2BF-417E-937F-C21FDE23A0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE2F637-B487-4FFD-BCE6-DF61AD9B8DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE2F637-B487-4FFD-BCE6-DF61AD9B8DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE2F637-B487-4FFD-BCE6-DF61AD9B8DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE2F637-B487-4FFD-BCE6-DF61AD9B8DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20541FB-13EF-4B8C-B3D4-E8C0CF3AC1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20541FB-13EF-4B8C-B3D4-E8C0CF3AC1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20541FB-13EF-4B8C-B3D4-E8C0CF3AC1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20541FB-13EF-4B8C-B3D4-E8C0CF3AC1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E86493E-FF96-4572-A79B-E3EF968DC8E7}
+	EndGlobalSection
+EndGlobal
