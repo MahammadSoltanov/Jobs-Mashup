@@ -1,46 +1,70 @@
 import React from 'react';
 import './Table.css';
 
-const Table = ({ jobsList, sortingCriteria, keyWordForSearch}) => {
+const Table = ({ jobList, sortingCriteria, keyWordForSearch}) => {
 
     const sortAscByDate = (jobs) => {
+        console.log('Called sortAscByDate');
+        
+        jobs.sort((a, b) => {
+            const dateA = new Date(a.publishDate);
+            const dateB = new Date(b.publishDate);
+            return dateA.getTime() - dateB.getTime();
+        });
 
+        return jobs;
     }
 
     const sortDescByDate = (jobs) => {
+        console.log('Called sortDescByDate');
 
+        jobs.sort((a, b) => {
+            const dateA = new Date(a.publishDate);
+            const dateB = new Date(b.publishDate);
+            return dateB.getTime() - dateA.getTime();
+        });
+
+
+        return jobs;
     }
 
     const filterByKeyWord = (jobs, keyWordForSearch) => { //Search is done just for position, not company or country
+        console.log('Called filterByKeyWord');
 
+        return jobs;
     }
 
-    const displayData = [];
-    if (jobsList) {
+    var displayData = [];
+    if (jobList) {
+        console.log("Filtering and sorting jobs");
+        var filteredData = keyWordForSearch ? filterByKeyWord(jobList, keyWordForSearch) : jobList;
+        var sortedData = sortingCriteria == 'Asc' ? sortAscByDate(filteredData) : sortDescByDate(filteredData);        
+        displayData = sortedData ?? [];
+    }
 
-        filteredData = keyWordForSearch ? filterByKeyWord(jobsList, keyWordForSearch) : jobsList;
-        sortedData = sortingCriteria == 'Asc' ? sortAscByDate(filteredData) : sortDescByDate(filteredData);
-        displayData = sortedData ?? []; 
+    else {
+        console.log('Job list is empty');
     }
 
 
-    return (
-        <div class="table">
-            <div class="row header">
-                <div class="cell">Position</div>
-                <div class="cell">Company</div>
-                <div class="cell">Country</div>
-                <div class="cell">Publish date</div>
-                <div class="cell">Details</div>
+    return (        
+        <div className="table">
+            {console.log(displayData)}
+            <div className="row header">
+                <div className="cell">Position</div>
+                <div className="cell">Company</div>
+                <div className="cell">Country</div>
+                <div className="cell">Publish date</div>
+                <div className="cell">Details</div>
             </div>
             {displayData.map((job) => (
-                <div class="row" key={job.id}>
-                <div class="cell">{job.position}</div>
-                <div class="cell">{job.companyName}</div>
-                <div class="cell">{job.countryName}</div>
-                <div class="cell">{job.publishDate}</div>
-                <div class="cell">
-                    <a>{job.jobLink}</a>
+             <div className="row" key={job.id}>
+                <div className="cell">{job.position}</div>
+                <div className="cell">{job.companyName}</div>
+                <div className="cell">{job.countryName}</div>
+                <div className="cell">{job.publishDate.split("T")[0]}</div>
+                <div className="cell">
+                    <a href={job.jobLink}>Go to details</a>
                 </div>
             </div>             
             )) }
