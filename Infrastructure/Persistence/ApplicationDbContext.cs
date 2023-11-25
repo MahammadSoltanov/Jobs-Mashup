@@ -37,6 +37,10 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         modelBuilder.Entity<Job>()
             .HasIndex(j => j.JobLink)
             .IsUnique();
+
+        modelBuilder.Entity<Job>()
+            .HasIndex(j => new { j.CompanyId, j.Position, j.PublishDate })
+            .IsUnique();
         modelBuilder.Entity<Job>()
             .Property(j => j.JobLink)
             .HasColumnType("varchar")

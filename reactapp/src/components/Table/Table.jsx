@@ -28,15 +28,19 @@ const Table = ({ jobList, sortingCriteria, keyWordForSearch}) => {
         return jobs;
     }
 
-    const filterByKeyWord = (jobs, keyWordForSearch) => { //Search is done just for position, not company or country
+    const filterByKeyWord = (jobs, keyWord) => { //Search is done just for position, not company or country
         console.log('Called filterByKeyWord');
 
-        return jobs;
+        var filteredJobs = jobs.filter((job) => {            
+            var jobPositionLower = job.position.toString().toLowerCase();            
+            return jobPositionLower.includes(keyWord);
+        })        
+        return filteredJobs;
     }
 
     var displayData = [];
     if (jobList) {
-        console.log("Filtering and sorting jobs");
+        console.log("Filtering and sorting jobs");        
         var filteredData = keyWordForSearch ? filterByKeyWord(jobList, keyWordForSearch) : jobList;
         var sortedData = sortingCriteria == 'Asc' ? sortAscByDate(filteredData) : sortDescByDate(filteredData);        
         displayData = sortedData ?? [];
@@ -48,8 +52,7 @@ const Table = ({ jobList, sortingCriteria, keyWordForSearch}) => {
 
 
     return (        
-        <div className="table">
-            {console.log(displayData)}
+        <div className="table">            
             <div className="row header">
                 <div className="cell">Position</div>
                 <div className="cell">Company</div>

@@ -2,8 +2,7 @@ const fetchJobsFromApi = async () => {
     try {
         console.log("Called fetchJobsFromApi");
         const response = await fetch('http://localhost:5021/api/Job');
-        const data = await response.json();
-        console.log(data);
+        const data = await response.json();        
         return data;
     }
     catch (error) {

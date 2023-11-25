@@ -5,7 +5,7 @@ const Toolbar = ({ onSearch, onSort }) => {
     return (
         <div className="toolbar">
             <div>
-                <input type="text" placeholder="Search position..." onChange={onSearch} />
+                <input type="text" placeholder="Search position..." onChange={(e) => onSearch(e.target.value.toString().toLowerCase()) } />
             </div>
 
             <div>

@@ -13,9 +13,9 @@ const App = () => {
         setSortingCriteria(criteria);
     };
 
-    const handleSearch = (keyWord) => {
-        console.log("Called handleSearch");
-        setKeyWord(keyWord)
+    const handleSearch = (keyWordForSearch) => {
+        console.log("Called handleSearch");        
+        setKeyWord(keyWordForSearch);
     }
 
     useEffect(() => {
