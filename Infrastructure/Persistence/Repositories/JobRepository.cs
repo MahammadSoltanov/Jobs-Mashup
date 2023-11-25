@@ -21,24 +21,24 @@ public class JobRepository : IJobRepository
 
     public async Task<List<JobDto>> GetAllAsync()
     {
-        var jobs = await _context.Jobs.ToListAsync();
+        var jobs = await _context.Jobs
+            .Include(j => j.Company)
+            .Include(j => j.Country)
+            .ToListAsync();
         List<JobDto> jobDtos = new List<JobDto>();
 
         if (jobs.Any())
         {
             foreach (var job in jobs)
             {
-                var companyName = (await _companyRepository.GetByIdAsync(job.CompanyId)).Name;
-                var countryName = (await _countryRepository.GetByIdAsync(job.CountryId)).Name;
-
                 JobDto jobDto = new JobDto()
                 {
                     Id = job.Id,
                     Position = job.Position,
                     JobLink = job.JobLink,
                     PublishDate = job.PublishDate,
-                    CompanyName = companyName,
-                    CountryName = countryName
+                    CompanyName = job.Company.Name,
+                    CountryName = job.Country.Name
                 };
 
                 jobDtos.Add(jobDto);
